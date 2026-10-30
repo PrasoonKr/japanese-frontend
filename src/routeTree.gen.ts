@@ -11,10 +11,15 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AccommodationRouteImport } from './routes/accommodation'
 import { Route as CareerSupportRouteImport } from './routes/career-support'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CoursesRouteImport } from './routes/courses'
 import { Route as EmployersRouteImport } from './routes/employers'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as JlptRouteImport } from './routes/jlpt'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as StudyInJapanRouteImport } from './routes/study-in-japan'
 import { Route as ApplyJobIdRouteImport } from './routes/apply/$jobId'
 import { Route as JobsIndexRouteImport } from './routes/jobs/index'
 import { Route as JobsJobIdRouteImport } from './routes/jobs/$jobId'
@@ -29,6 +34,11 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccommodationRoute = AccommodationRouteImport.update({
+  id: '/accommodation',
+  path: '/accommodation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CareerSupportRoute = CareerSupportRouteImport.update({
   id: '/career-support',
   path: '/career-support',
@@ -39,14 +49,34 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CoursesRoute = CoursesRouteImport.update({
+  id: '/courses',
+  path: '/courses',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EmployersRoute = EmployersRouteImport.update({
   id: '/employers',
   path: '/employers',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JlptRoute = JlptRouteImport.update({
+  id: '/jlpt',
+  path: '/jlpt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudyInJapanRoute = StudyInJapanRouteImport.update({
+  id: '/study-in-japan',
+  path: '/study-in-japan',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApplyJobIdRoute = ApplyJobIdRouteImport.update({
@@ -68,10 +98,15 @@ const JobsJobIdRoute = JobsJobIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accommodation': typeof AccommodationRoute
   '/career-support': typeof CareerSupportRoute
   '/contact': typeof ContactRoute
+  '/courses': typeof CoursesRoute
   '/employers': typeof EmployersRoute
+  '/gallery': typeof GalleryRoute
+  '/jlpt': typeof JlptRoute
   '/services': typeof ServicesRoute
+  '/study-in-japan': typeof StudyInJapanRoute
   '/apply/$jobId': typeof ApplyJobIdRoute
   '/jobs/$jobId': typeof JobsJobIdRoute
   '/jobs/': typeof JobsIndexRoute
@@ -79,10 +114,15 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accommodation': typeof AccommodationRoute
   '/career-support': typeof CareerSupportRoute
   '/contact': typeof ContactRoute
+  '/courses': typeof CoursesRoute
   '/employers': typeof EmployersRoute
+  '/gallery': typeof GalleryRoute
+  '/jlpt': typeof JlptRoute
   '/services': typeof ServicesRoute
+  '/study-in-japan': typeof StudyInJapanRoute
   '/apply/$jobId': typeof ApplyJobIdRoute
   '/jobs/$jobId': typeof JobsJobIdRoute
   '/jobs': typeof JobsIndexRoute
@@ -91,10 +131,15 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accommodation': typeof AccommodationRoute
   '/career-support': typeof CareerSupportRoute
   '/contact': typeof ContactRoute
+  '/courses': typeof CoursesRoute
   '/employers': typeof EmployersRoute
+  '/gallery': typeof GalleryRoute
+  '/jlpt': typeof JlptRoute
   '/services': typeof ServicesRoute
+  '/study-in-japan': typeof StudyInJapanRoute
   '/apply/$jobId': typeof ApplyJobIdRoute
   '/jobs/$jobId': typeof JobsJobIdRoute
   '/jobs/': typeof JobsIndexRoute
@@ -104,10 +149,15 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/accommodation'
     | '/career-support'
     | '/contact'
+    | '/courses'
     | '/employers'
+    | '/gallery'
+    | '/jlpt'
     | '/services'
+    | '/study-in-japan'
     | '/apply/$jobId'
     | '/jobs/$jobId'
     | '/jobs/'
@@ -115,10 +165,15 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/accommodation'
     | '/career-support'
     | '/contact'
+    | '/courses'
     | '/employers'
+    | '/gallery'
+    | '/jlpt'
     | '/services'
+    | '/study-in-japan'
     | '/apply/$jobId'
     | '/jobs/$jobId'
     | '/jobs'
@@ -126,10 +181,15 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/accommodation'
     | '/career-support'
     | '/contact'
+    | '/courses'
     | '/employers'
+    | '/gallery'
+    | '/jlpt'
     | '/services'
+    | '/study-in-japan'
     | '/apply/$jobId'
     | '/jobs/$jobId'
     | '/jobs/'
@@ -138,10 +198,15 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AccommodationRoute: typeof AccommodationRoute
   CareerSupportRoute: typeof CareerSupportRoute
   ContactRoute: typeof ContactRoute
+  CoursesRoute: typeof CoursesRoute
   EmployersRoute: typeof EmployersRoute
+  GalleryRoute: typeof GalleryRoute
+  JlptRoute: typeof JlptRoute
   ServicesRoute: typeof ServicesRoute
+  StudyInJapanRoute: typeof StudyInJapanRoute
   ApplyJobIdRoute: typeof ApplyJobIdRoute
   JobsJobIdRoute: typeof JobsJobIdRoute
   JobsIndexRoute: typeof JobsIndexRoute
@@ -163,6 +228,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/accommodation': {
+      id: '/accommodation'
+      path: '/accommodation'
+      fullPath: '/accommodation'
+      preLoaderRoute: typeof AccommodationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/career-support': {
       id: '/career-support'
       path: '/career-support'
@@ -177,6 +249,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/courses': {
+      id: '/courses'
+      path: '/courses'
+      fullPath: '/courses'
+      preLoaderRoute: typeof CoursesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/employers': {
       id: '/employers'
       path: '/employers'
@@ -184,11 +263,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EmployersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jlpt': {
+      id: '/jlpt'
+      path: '/jlpt'
+      fullPath: '/jlpt'
+      preLoaderRoute: typeof JlptRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/study-in-japan': {
+      id: '/study-in-japan'
+      path: '/study-in-japan'
+      fullPath: '/study-in-japan'
+      preLoaderRoute: typeof StudyInJapanRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/apply/$jobId': {
@@ -218,10 +318,15 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AccommodationRoute: AccommodationRoute,
   CareerSupportRoute: CareerSupportRoute,
   ContactRoute: ContactRoute,
+  CoursesRoute: CoursesRoute,
   EmployersRoute: EmployersRoute,
+  GalleryRoute: GalleryRoute,
+  JlptRoute: JlptRoute,
   ServicesRoute: ServicesRoute,
+  StudyInJapanRoute: StudyInJapanRoute,
   ApplyJobIdRoute: ApplyJobIdRoute,
   JobsJobIdRoute: JobsJobIdRoute,
   JobsIndexRoute: JobsIndexRoute,

@@ -18,13 +18,25 @@ interface NavLinkItem {
   to: string;
 }
 
+// Exactly the 8 required items from user specification:
+// 1. Home
+// 2. Courses
+// 3. JLPT
+// 4. Japanese language Jobs
+// 5. Study in Japan
+// 6. Accommodation
+// 7. Gallery
+// 8. Contact Us
+// (Blog is not required)
 const NAV_LINKS: NavLinkItem[] = [
-  { label: 'Find Jobs', to: '/jobs' },
-  { label: 'Services', to: '/services' },
-  { label: 'For Employers', to: '/employers' },
-  { label: 'Career Support', to: '/career-support' },
-  { label: 'About', to: '/about' },
-  { label: 'Contact', to: '/contact' },
+  { label: 'Home', to: '/' },
+  { label: 'Courses', to: '/courses' },
+  { label: 'JLPT', to: '/jlpt' },
+  { label: 'Japanese Language Jobs', to: '/jobs' },
+  { label: 'Study in Japan', to: '/study-in-japan' },
+  { label: 'Accommodation', to: '/accommodation' },
+  { label: 'Gallery', to: '/gallery' },
+  { label: 'Contact Us', to: '/contact' },
 ];
 
 export const Header: React.FC = () => {
@@ -39,28 +51,28 @@ export const Header: React.FC = () => {
         position: 'sticky',
         top: 0,
         zIndex: 100,
-        backgroundColor: 'rgba(255, 255, 255, 0.95)',
+        backgroundColor: 'rgba(255, 255, 255, 0.96)',
         backdropFilter: 'blur(10px)',
         borderBottom: '1px solid #E8E2D9',
       }}
     >
-      <Container size="xl" h={72}>
+      <Container size="xl" h={74}>
         <Group justify="space-between" h="100%" wrap="nowrap" gap="md">
-          {/* Brand Logo */}
+          {/* Brand Logo: JLJ Institute / Japanese Language Jobs Services */}
           <Link to="/" style={{ textDecoration: 'none', color: 'inherit', flexShrink: 0 }}>
             <Group gap="xs" wrap="nowrap">
               <Box
                 style={{
-                  width: 38,
-                  height: 38,
+                  width: 40,
+                  height: 40,
                   backgroundColor: '#B74736',
                   borderRadius: 8,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: '#FFFFFF',
-                  fontWeight: 800,
-                  fontSize: 20,
+                  fontWeight: 900,
+                  fontSize: 22,
                   fontFamily: "'Noto Sans JP', sans-serif",
                   boxShadow: '0 2px 8px rgba(183, 71, 54, 0.25)',
                 }}
@@ -71,15 +83,15 @@ export const Header: React.FC = () => {
                 <Text fw={800} size="md" c="deepNavy.8" style={{ lineHeight: 1.15, letterSpacing: '-0.3px' }}>
                   {SITE_CONFIG.name}
                 </Text>
-                <Text size="10px" fw={600} c="japaneseRed.6" style={{ letterSpacing: '0.8px', textTransform: 'uppercase' }}>
+                <Text size="10px" fw={700} c="japaneseRed.6" style={{ letterSpacing: '0.6px', textTransform: 'uppercase' }}>
                   {SITE_CONFIG.badgeSubtitle}
                 </Text>
               </Box>
             </Group>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <Group gap={6} visibleFrom="lg" wrap="nowrap" style={{ flexShrink: 1 }}>
+          {/* Desktop Navigation Links (All 8 Items) */}
+          <Group gap={4} visibleFrom="xl" wrap="nowrap" style={{ flexShrink: 1 }}>
             {NAV_LINKS.map((link) => {
               const isActive =
                 link.to === '/'
@@ -94,12 +106,13 @@ export const Header: React.FC = () => {
                 >
                   <Button
                     variant="subtle"
-                    size="sm"
+                    size="xs"
                     color={isActive ? 'japaneseRed' : 'deepNavy'}
                     style={{
                       fontWeight: isActive ? 700 : 500,
                       backgroundColor: isActive ? '#FDF2F0' : 'transparent',
-                      padding: '0 12px',
+                      padding: '0 10px',
+                      fontSize: '13px',
                     }}
                   >
                     {link.label}
@@ -109,37 +122,26 @@ export const Header: React.FC = () => {
             })}
           </Group>
 
-          {/* Clean Right Actions - No Overlap */}
-          <Group gap="sm" wrap="nowrap" style={{ flexShrink: 0 }}>
-            <Link to="/jobs" style={{ textDecoration: 'none' }}>
-              <Button
-                variant="subtle"
-                color="deepNavy"
-                size="sm"
-                visibleFrom="xl"
-              >
-                Browse Jobs
-              </Button>
-            </Link>
-
-            <Link to="/employers" style={{ textDecoration: 'none' }}>
+          {/* Action CTA */}
+          <Group gap="xs" wrap="nowrap" style={{ flexShrink: 0 }}>
+            <Link to="/contact" style={{ textDecoration: 'none' }}>
               <Button
                 variant="filled"
                 color="japaneseRed"
-                size="sm"
+                size="xs"
                 visibleFrom="sm"
               >
-                Hire Talent
+                Enquire Now
               </Button>
             </Link>
 
-            {/* Mobile / Tablet Hamburger Menu */}
-            <Burger opened={opened} onClick={toggle} hiddenFrom="lg" size="sm" />
+            {/* Hamburger for mobile & tablet (below xl) */}
+            <Burger opened={opened} onClick={toggle} hiddenFrom="xl" size="sm" />
           </Group>
         </Group>
       </Container>
 
-      {/* Mobile Drawer Navigation */}
+      {/* Mobile & Tablet Navigation Drawer */}
       <Drawer
         opened={opened}
         onClose={close}
@@ -149,39 +151,32 @@ export const Header: React.FC = () => {
           <Group gap="xs">
             <Box
               style={{
-                width: 28,
-                height: 28,
+                width: 32,
+                height: 32,
                 backgroundColor: '#B74736',
                 borderRadius: 6,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: '#FFF',
-                fontWeight: 700,
-                fontSize: 16,
+                fontWeight: 800,
+                fontSize: 18,
               }}
             >
               {SITE_CONFIG.logoKanji}
             </Box>
-            <Text fw={700} size="sm" c="deepNavy.8">
-              {SITE_CONFIG.name}
-            </Text>
+            <Box>
+              <Text fw={700} size="sm" c="deepNavy.8">
+                {SITE_CONFIG.name}
+              </Text>
+              <Text size="9px" fw={600} c="japaneseRed.6">
+                {SITE_CONFIG.badgeSubtitle}
+              </Text>
+            </Box>
           </Group>
         }
       >
         <Stack gap="xs" mt="sm">
-          <Link to="/" onClick={close} style={{ textDecoration: 'none' }}>
-            <Button
-              variant="subtle"
-              fullWidth
-              justify="flex-start"
-              color={currentPath === '/' ? 'japaneseRed' : 'deepNavy'}
-              style={{ fontWeight: currentPath === '/' ? 700 : 500 }}
-            >
-              Home
-            </Button>
-          </Link>
-
           {NAV_LINKS.map((link) => (
             <Link
               key={link.to}
@@ -206,14 +201,19 @@ export const Header: React.FC = () => {
 
           <Box pt="md" style={{ borderTop: '1px solid #E8E2D9' }}>
             <Stack gap="sm">
-              <Link to="/jobs" onClick={close} style={{ textDecoration: 'none' }}>
+              <Link to="/courses" onClick={close} style={{ textDecoration: 'none' }}>
                 <Button fullWidth variant="outline" color="deepNavy">
-                  Explore Open Jobs
+                  Explore Japanese Courses
                 </Button>
               </Link>
-              <Link to="/employers" onClick={close} style={{ textDecoration: 'none' }}>
+              <Link to="/jobs" onClick={close} style={{ textDecoration: 'none' }}>
+                <Button fullWidth variant="outline" color="japaneseRed">
+                  Browse Japanese Language Jobs
+                </Button>
+              </Link>
+              <Link to="/contact" onClick={close} style={{ textDecoration: 'none' }}>
                 <Button fullWidth variant="filled" color="japaneseRed">
-                  Hire Bilingual Talent
+                  Contact & Admission Enquiry
                 </Button>
               </Link>
             </Stack>

@@ -1,28 +1,29 @@
-// Central website & brand configuration (Dev Profile)
-// You can customize the name, logo symbol, tagline, contacts, and links anytime here.
+// Central website & brand configuration
 export const SITE_CONFIG = {
-  name: "NihonWork",
-  shortName: "NihonWork",
-  logoKanji: "職", // "Shoku" = Career / Profession / Work (clean, neutral Japanese professional symbol)
-  tagline: "Connecting Japanese-Language Talent with Global Opportunities",
-  badgeSubtitle: "Japanese Talent & Career Solutions",
-  description: "Specialized career portal connecting JLPT-certified bilingual professionals, translators, interpreters, and engineers with Japanese MNCs and global enterprises.",
-  contactEmail: "contact@nihonwork.dev",
-  contactPhone: "+91 (124) 490-8800",
+  name: "JLJ Institute",
+  shortName: "JLJ Institute",
+  tagline: "Japanese Language Training, JLPT Preparation, Study in Japan & Career Placements",
+  badgeSubtitle: "Japanese Language Jobs Services",
+  logoKanji: "日", // Japanese character for Nihon / Sun
+  description: "Premier Japanese Language Institute & Jobs Services providing structured JLPT courses (N5-N1), Study in Japan visa assistance, accommodation support, and bilingual corporate recruitment.",
+  contactEmail: "admissions@jljinstitute.com",
+  contactPhone: "+91 98114 92323",
+  alternatePhone: "+91 74108 02680",
   locations: [
-    { city: "Gurugram (Delhi NCR)", country: "India", address: "Cyber City, DLF Phase 2, Gurugram, Haryana" },
-    { city: "Bengaluru", country: "India", address: "Prestige Meridian, MG Road, Bengaluru, Karnataka" },
-    { city: "Tokyo", country: "Japan (Advisory Office)", address: "Marunouchi, Chiyoda-ku, Tokyo 100-0005" }
+    { city: "Delhi NCR / Gurugram", country: "India (Head Office)", address: "Near Cyber City / Metro Station, Gurugram, Haryana 122002" },
+    { city: "Faridabad", country: "India (NCR Center)", address: "Sector 27C, Mathura Road, Faridabad, Haryana 121003" },
+    { city: "Tokyo", country: "Japan (Liaison & Student Support)", address: "Shinjuku-ku / Chiyoda-ku, Tokyo 160-0023, Japan" }
   ],
   socials: {
     linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com",
+    youtube: "https://youtube.com",
+    instagram: "https://instagram.com",
   },
   jlptLevels: [
-    { level: "N1", label: "JLPT N1", description: "Advanced / Native-level business fluency" },
-    { level: "N2", label: "JLPT N2", description: "Business professional Japanese" },
-    { level: "N3", label: "JLPT N3", description: "Bridge / Intermediate conversational" },
-    { level: "N4", label: "JLPT N4", description: "Basic daily workplace communication" },
-    { level: "N5", label: "JLPT N5", description: "Beginner foundation Japanese" }
+    { level: "N1", label: "JLPT N1", description: "Advanced / Native-level fluency for high-level management and translation" },
+    { level: "N2", label: "JLPT N2", description: "Business professional Japanese for MNCs and bilingual engineers" },
+    { level: "N3", label: "JLPT N3", description: "Intermediate conversational bridge for technical and operational roles" },
+    { level: "N4", label: "JLPT N4", description: "Elementary daily workplace communication and basic work visa requirement" },
+    { level: "N5", label: "JLPT N5", description: "Beginner foundation Japanese (Hiragana, Katakana, basic Kanji & grammar)" }
   ]
 };
